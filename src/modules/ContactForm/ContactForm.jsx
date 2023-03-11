@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import {
   fetchContacts,
   addContact,
-} from '../../../redux/contacts/contacts-operations';
+} from '../../redux/contacts/contacts-operations';
 
 import styles from './contact-form.module.css';
 
