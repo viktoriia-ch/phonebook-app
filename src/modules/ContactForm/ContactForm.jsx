@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import Title from 'shared/components/Title/Title';
+import TextField from 'shared/components/TextField/TextField';
+import Button from 'shared/components/Button/Button';
+import fields from './fields';
 
 import {
   fetchContacts,
@@ -44,43 +48,14 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <h1 className={styles.title}>Phonebook</h1>
-      <div className={styles.block}>
-        <label className={styles.label}>
-          Name
-          <input
-            onChange={handleChangeName}
-            className={styles.input}
-            type="text"
-            name="name"
-            value={name}
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-            placeholder="enter name..."
-          />
-        </label>
-      </div>
-
-      <div className={styles.block}>
-        <label className={styles.input_label}>
-          Number
-          <input
-            onChange={handleChangeNumber}
-            className={styles.input}
-            type="tel"
-            name="number"
-            value={number}
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-            placeholder="enter number..."
-          />
-        </label>
-      </div>
-      <button type="submit" className={styles.btn}>
-        Add contact
-      </button>
+      <Title text="Phonebook" />
+      <TextField onChange={handleChangeName} value={name} {...fields.name} />
+      <TextField
+        onChange={handleChangeNumber}
+        value={number}
+        {...fields.number}
+      />
+      <Button type="submit" text="Add contact" />
     </form>
   );
 };

@@ -2,6 +2,7 @@
   text-decoration: none;
   color: black;
   padding: 10px 15px;
+  font-size: 18px;
 }
 
 .link:global(.active) {

@@ -1,8 +1,9 @@
-// import styles from './register-form.module.css'
+import styles from './register-form.module.css';
 import useForm from 'shared/hooks/useForm';
-
+import Title from 'shared/components/Title/Title';
 import fields from './fields';
 import TextField from 'shared/components/TextField/TextField';
+import Button from 'shared/components/Button/Button';
 import initialState from './initialState';
 
 const RegisterForm = ({ onSubmit }) => {
@@ -12,7 +13,8 @@ const RegisterForm = ({ onSubmit }) => {
   });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <Title text="Register page" />
       <TextField
         value={state.name}
         handleChange={handleChange}
@@ -28,7 +30,7 @@ const RegisterForm = ({ onSubmit }) => {
         handleChange={handleChange}
         {...fields.password}
       />
-      <button>Register</button>
+      <Button type="submit" text="Register" />
     </form>
   );
 };
