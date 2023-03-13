@@ -1,14 +1,12 @@
-import notFoundImg from '../../shared/images/not-found-error.png';
 import styles from './not-found-page.module.css';
+import Title from 'shared/components/Title/Title';
 
 const NotFoundPage = () => {
   return (
     <div className={styles.container}>
-      <img
-        src={notFoundImg}
-        className={styles.image}
-        alt="This page is not found!"
-      />
+      <Title text="404" />
+      <p> </p>
+      <Title text="Not found" />
     </div>
   );
 };

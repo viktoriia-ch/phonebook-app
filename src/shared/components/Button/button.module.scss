@@ -1,0 +1,15 @@
+.btn {
+  padding: 7px 15px;
+  font-size: 16px;
+
+  background: #008080e6;
+  background: linear-gradient(90deg, #008080e6 0%, rgba(102, 178, 178, 1) 100%);
+  box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.45);
+  border: none;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: #004c4cd6;
+    background: linear-gradient(90deg, #008080e6 0%, #006060cf 100%);
+  }
+}

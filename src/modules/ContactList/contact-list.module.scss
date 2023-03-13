@@ -9,11 +9,14 @@
 .btn {
   margin-left: 5px;
   border-radius: 2px;
-  background-color: #008080;
+  background-color: transparent;
   border: none;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
-}
+  color: #ff0000b0;
+  font-weight: 600;
 
-.btn:hover {
-  background-color: #006666;
+  &:hover {
+    color: #fff;
+    background-color: #ff0000b0;
+  }
 }

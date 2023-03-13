@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Notify } from 'notiflix';
+
 import Title from 'shared/components/Title/Title';
 import TextField from 'shared/components/TextField/TextField';
 import Button from 'shared/components/Button/Button';
-import fields from './fields';
 
 import {
   fetchContacts,
   addContact,
 } from '../../redux/contacts/contacts-operations';
+import fields from './fields';
 
 import styles from './contact-form.module.css';
 
@@ -22,7 +24,9 @@ const ContactForm = () => {
   }, [dispatch]);
 
   const handleAddContact = ({ name, number }) => {
-    return dispatch(addContact({ name, number }));
+    const result = dispatch(addContact({ name, number }));
+    Notify.success('Contact added!');
+    return result;
   };
 
   const handleChangeName = ({ target: { value } }) => {

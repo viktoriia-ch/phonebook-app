@@ -1,7 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Notify } from 'notiflix';
+
 import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
 import { deleteContact } from '../../redux/contacts/contacts-operations';
-import styles from './contact-list.module.css';
+
+import styles from './contact-list.module.scss';
 
 const ContactList = () => {
   const filteredContacts = useSelector(getFilteredContacts);
@@ -10,6 +13,7 @@ const ContactList = () => {
   const contactList = filteredContacts.map(contact => {
     const handleRemoveContact = id => {
       dispatch(deleteContact(id));
+      Notify.success('Contact deleted!');
     };
 
     return (
@@ -23,7 +27,7 @@ const ContactList = () => {
           onClick={() => handleRemoveContact(contact.id)}
           type="button"
         >
-          x
+          delete
         </button>
       </li>
     );

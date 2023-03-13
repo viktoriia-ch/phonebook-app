@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
 
-import styles from './nav-bar-auth.module.css';
+import styles from './nav-bar-auth.module.scss';
 
 const NavBarAuth = () => {
   return (
-    <>
+    <div>
       <NavLink to="/register" className={styles.link}>
         Register
       </NavLink>{' '}
@@ -13,7 +13,7 @@ const NavBarAuth = () => {
         {' '}
         Log in
       </NavLink>
-    </>
+    </div>
   );
 };
 

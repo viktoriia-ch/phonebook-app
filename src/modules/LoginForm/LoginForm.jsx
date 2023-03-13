@@ -1,9 +1,11 @@
 import useForm from 'shared/hooks/useForm';
+import Title from 'shared/components/Title/Title';
 import TextField from 'shared/components/TextField/TextField';
 import Button from 'shared/components/Button/Button';
+
 import fields from './fields';
 import initialState from './initialState';
-import Title from 'shared/components/Title/Title';
+
 import styles from './login-form.module.css';
 
 const LoginForm = ({ onSubmit }) => {

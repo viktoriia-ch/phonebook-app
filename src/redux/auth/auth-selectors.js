@@ -1,2 +1,6 @@
 export const isLogin = ({ auth }) => auth.isLogin;
-export const userName = ({ auth }) => auth.user.name;
+export const getUser = ({ auth }) => auth.user;
+export const getAuth = ({ auth }) => {
+  const { isLogin, token } = auth;
+  return { isLogin, token };
+};

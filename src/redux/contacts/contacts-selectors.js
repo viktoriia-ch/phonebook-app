@@ -1,6 +1,6 @@
 export const getFilteredContacts = ({ contacts, filter }) => {
   if (!filter) {
-    return contacts.items;
+    return contacts.items || [];
   }
 
   const normalizedFilter = filter.toLowerCase();
