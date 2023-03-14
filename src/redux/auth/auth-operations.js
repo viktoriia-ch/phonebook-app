@@ -11,6 +11,7 @@ export const signup = createAsyncThunk(
       Notify.success(`${result.user.name}, welcome to Phonebook!`);
       return result;
     } catch ({ response }) {
+      Notify.failure("Can't register, try again");
       return rejectWithValue(response);
     }
   }
@@ -24,6 +25,7 @@ export const login = createAsyncThunk(
       Notify.success(`${result.user.name}, welcome back to Phonebook!`);
       return result;
     } catch ({ response }) {
+      Notify.failure("Can't log in, try again");
       return rejectWithValue(response);
     }
   }

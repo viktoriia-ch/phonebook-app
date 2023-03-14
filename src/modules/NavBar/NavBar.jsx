@@ -19,12 +19,14 @@ const NavBar = () => {
         <NavLink to="/" className={styles.link}>
           Home
         </NavLink>
-        <NavLink to="/contacts" className={styles.link}>
-          Contacts
-        </NavLink>
+        {isUserLogin && (
+          <NavLink to="/contacts" className={styles.link}>
+            Contacts
+          </NavLink>
+        )}
       </div>
-      {!isUserLogin && <NavBarAuth />}
       {isUserLogin && <UserMenu />}
+      {!isUserLogin && <NavBarAuth />}
     </div>
   );
 };

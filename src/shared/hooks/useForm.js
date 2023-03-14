@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback } from 'react';
 
 const useForm = ({ initialState, onSubmit }) => {
   const [state, setState] = useState({ ...initialState });
@@ -6,17 +6,16 @@ const useForm = ({ initialState, onSubmit }) => {
   const handleChange = useCallback(
     ({ target }) => {
       const { name, value } = target;
-      setState((prevState) => {
+      setState(prevState => {
         return { ...prevState, [name]: value };
       });
     },
     [setState]
   );
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     onSubmit({ ...state });
-    setState(initialState);
   };
 
   return { state, setState, handleChange, handleSubmit };

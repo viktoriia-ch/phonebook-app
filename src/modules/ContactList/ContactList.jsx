@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Notify } from 'notiflix';
-
+import { AiOutlineDelete, AiOutlinePhone } from 'react-icons/ai';
 import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
 import { deleteContact } from '../../redux/contacts/contacts-operations';
 
@@ -13,11 +12,13 @@ const ContactList = () => {
   const contactList = filteredContacts.map(contact => {
     const handleRemoveContact = id => {
       dispatch(deleteContact(id));
-      Notify.success('Contact deleted!');
     };
 
     return (
       <li key={contact.id} className={styles.item}>
+        <p className={styles.marker}>
+          <AiOutlinePhone className={styles.icon} />
+        </p>
         <span>
           {contact.name}: {contact.number}
         </span>
@@ -27,7 +28,7 @@ const ContactList = () => {
           onClick={() => handleRemoveContact(contact.id)}
           type="button"
         >
-          delete
+          <AiOutlineDelete className={styles.icon} />
         </button>
       </li>
     );

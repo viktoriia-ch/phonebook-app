@@ -1,22 +1,33 @@
 .list {
-  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .item {
+  display: flex;
   padding-top: 10px;
 }
 
+.marker {
+  color: rgb(80, 80, 80);
+  margin-right: 10px;
+}
+
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 5px;
-  border-radius: 2px;
+  padding: 0 5px;
   background-color: transparent;
   border: none;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
   color: #ff0000b0;
-  font-weight: 600;
 
   &:hover {
-    color: #fff;
-    background-color: #ff0000b0;
+    color: #ff0000;
   }
+}
+
+.icon {
+  height: 18px;
+  width: 18px;
 }

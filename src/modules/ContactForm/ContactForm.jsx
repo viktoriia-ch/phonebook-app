@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Notify } from 'notiflix';
 
 import Title from 'shared/components/Title/Title';
 import TextField from 'shared/components/TextField/TextField';
@@ -25,7 +24,6 @@ const ContactForm = () => {
 
   const handleAddContact = ({ name, number }) => {
     const result = dispatch(addContact({ name, number }));
-    Notify.success('Contact added!');
     return result;
   };
 
