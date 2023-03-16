@@ -9,6 +9,7 @@ const fields = {
     required: true,
     placeholder: 'enter name...',
   },
+
   number: {
     label: 'Number',
     title:

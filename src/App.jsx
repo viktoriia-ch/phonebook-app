@@ -1,11 +1,11 @@
 import { Provider } from 'react-redux';
-import { store, persistor } from 'redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from 'redux/store';
+import { BrowserRouter } from 'react-router-dom';
 
 import NavBar from 'modules/NavBar/NavBar';
 import AuthLayout from 'modules/AuthLayout/AuthLayout';
 import UserRoutes from 'UserRoutes';
-import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {
   return (

@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import Title from 'shared/components/Title/Title';
 import TextField from 'shared/components/TextField/TextField';
 import Button from 'shared/components/Button/Button';
-
 import {
   fetchContacts,
   addContact,
