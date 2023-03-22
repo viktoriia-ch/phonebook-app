@@ -12,7 +12,7 @@ const App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <AuthLayout>
-          <BrowserRouter basename="/goit-react-hw-08-phonebook">
+          <BrowserRouter basename="/phonebook-app">
             <NavBar />
             <UserRoutes />
           </BrowserRouter>
